@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('content')
-<form action="{{ url('comment/add') }}" method="POST" class="form-horizontal">
+<form action="{{ url('comment/save') }}" method="POST" class="form-horizontal" role="form">
+	{!! csrf_field() !!}
 	<div class="form-group">
 		<label for="name" class="col-sm-2 control-label">姓名</label>
 		<div class="col-sm-10">
@@ -11,7 +12,7 @@
 	<div class="form-group">
 		<label for="email" class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-10">
-		 	<input type="text" name="email" id="email" class="form-control" placeholder="Email">
+		 	<input type="email" name="email" id="email" class="form-control" placeholder="Email">
 		</div>
 	</div>
 	<div class="form-group">

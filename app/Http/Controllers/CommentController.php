@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller {
 
@@ -8,9 +9,9 @@ class CommentController extends Controller {
 		return view('guestbook');
 	}
 
-	public function postAdd(Request $request) {
-		$inputs     = $request->all();
-		$validators = Validator::make($inputs, [
+	public function postSave(Request $request) {
+		$input      = $request->all();
+		$validators = Validator::make($input, [
 			'comment' => 'required',
 		]);
 
@@ -18,7 +19,7 @@ class CommentController extends Controller {
 			$comment          = new Comment();
 			$comment->name    = isset($input['name']) ? $input['name'] : '匿名';
 			$comment->email   = isset($input['email']) ? $input['email'] : 'anonymous@guest.com';
-			$comment->comment = $input['comment'];
+			$comment->comment = nl2br($input['comment']);
 
 			if ($comment->save()) {
 				return redirect('/')->with('status', '留言成功');

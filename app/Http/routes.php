@@ -14,5 +14,5 @@
 Route::get('/', 'CommentController@getGuestbook');
 
 Route::controllers([
-	'comments' => 'CommentController',
+	'comment' => 'CommentController',
 ]);
