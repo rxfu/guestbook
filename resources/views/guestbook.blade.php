@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<form action="{{ url('comment/save') }}" method="POST" class="form-horizontal" role="form">
+<form action="{{ url('comment/store') }}" method="POST" class="form-horizontal" role="form">
 	{!! csrf_field() !!}
 	<div class="form-group">
 		<label for="name" class="col-sm-2 control-label">姓名</label>
