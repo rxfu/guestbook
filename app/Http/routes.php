@@ -11,6 +11,8 @@
 |
  */
 
-Route::get('/', function () {
-	return view('guestbook');
-});
+Route::get('/', 'CommentController@getGuestbook');
+
+Route::controllers([
+	'comments' => 'CommentController',
+]);
