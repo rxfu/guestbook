@@ -16,24 +16,28 @@
 		</header><!-- /header -->
 
 		<main class="container">
-            @if (session('status'))
-                <div class="alert alert-success alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    {{ session('status') }}
-                </div>
-            @endif
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>注意：</strong>出错啦！
-                    <<ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-			@yield('content')
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+		            @if (session('status'))
+		                <div class="alert alert-success alert-dismissable">
+		                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		                    {{ session('status') }}
+		                </div>
+		            @endif
+		            @if ($errors->any())
+		                <div class="alert alert-danger alert-dismissable">
+		                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		                    <strong>注意：</strong>出错啦！
+		                    <<ul>
+		                        @foreach ($errors->all() as $error)
+		                            <li>{{ $error }}</li>
+		                        @endforeach
+		                    </ul>
+		                </div>
+		            @endif
+					@yield('content')
+				</div>
+			</div>
 		</main>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

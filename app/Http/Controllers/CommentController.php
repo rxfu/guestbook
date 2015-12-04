@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 class CommentController extends Controller {
 
 	public function getGuestbook() {
-		return view('guestbook');
+		$comments = Comment::where('is_published', 1)->orderBy('updated_at', 'desc')->get();
+		return view('guestbook')->with('comments', $comments);
 	}
 
 	public function postStore(Request $request) {

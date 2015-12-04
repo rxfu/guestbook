@@ -24,7 +24,19 @@
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10 text-center">
 			<button type="submit" class="btn btn-primary">提交</button>
+			<button type="reset" class="btn btn-default">重置</button>
 		</div>
 	</div>
 </form>
+
+<div>
+	<div class="list-group">
+		@foreach ($comments as $comment)
+			<a href="mailto:{{ $comment->email }}" class="list-group-item">
+				<h4 class="list-group-item-heading">{{ $comment->name }} <small>{{ $comment->email }} ({{ $comment->updated_at }})</small></h4>
+				<p class="list-group-item-text">{{ $comment->comment }}</p>
+			</a>
+		@endforeach
+	</div>
+</div>
 @stop
