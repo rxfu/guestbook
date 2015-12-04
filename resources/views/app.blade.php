@@ -12,10 +12,10 @@
 	</head>
 	<body>
 		<header id="header" class="page-header">
-			<h1>广西师范大学图书馆新网站建议与意见</h1>
+			<h1 class="text-center">广西师范大学图书馆新网站建议与意见</h1>
 		</header><!-- /header -->
 
-		<main>
+		<main class="container">
 			@yield('content')
 		</main>
 
