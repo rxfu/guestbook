@@ -20,12 +20,13 @@
 			<tr>
 				<td>#{{ $comment->id }}</td>
 				<td>{{ $comment->name }}</td>
-				<td><a href="mailto:{{ $comment->email }}?subject=留言回复" title="{{ $comment->email }}">{{ $comment->email }}</a></td>
+				<td><a href="mailto:{{ $comment->email }}?subject=留言回复" title="Email me">{{ $comment->email }}</a></td>
 				<td>{{ $comment->comment }}</td>
 				<td>{{ $comment->created_at }}</td>
 				<td>
-					<form action="{{ url('comment/publish') }}" method="POST" role="form">
-						{!! method_field('delete') !!}
+					<form action="{{ url('comment/publish', $comment->id) }}" method="POST" role="form">
+						{!! method_field('put') !!}
+						{!! csrf_field() !!}
 						@if ($comment->is_published)
 							<button type="submit" class="btn btn-warning">取消发布</button>
 						@else

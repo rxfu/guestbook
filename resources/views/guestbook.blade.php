@@ -35,8 +35,8 @@
 <div>
 	<div class="list-group">
 		@foreach ($comments as $comment)
-			<a href="mailto:{{ $comment->email }}" class="list-group-item">
-				<h4 class="list-group-item-heading">{{ $comment->name }} <small>{{ $comment->email }} ({{ $comment->updated_at }})</small></h4>
+			<a href="#" class="list-group-item">
+				<h4 class="list-group-item-heading">{{ $comment->name }} <small>{{ $comment->updated_at }}</small></h4>
 				<p class="list-group-item-text">{{ $comment->comment }}</p>
 			</a>
 		@endforeach
