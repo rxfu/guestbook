@@ -33,7 +33,7 @@ class AuthController extends Controller {
 	 */
 	public function __construct() {
 		$this->username   = 'username';
-		$this->redirectTo = '/';
+		$this->redirectTo = 'comment/list';
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 

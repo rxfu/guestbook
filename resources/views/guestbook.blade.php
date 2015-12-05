@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('content')
+<div class="text-right">
+	<a href="{{ url('auth/login') }}">管理</a>
+</div>
 <form action="{{ url('comment/store') }}" method="POST" class="form-horizontal" role="form">
 	{!! csrf_field() !!}
 	<div class="form-group">

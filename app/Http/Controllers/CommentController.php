@@ -28,4 +28,9 @@ class CommentController extends Controller {
 			return back()->withErrors('留言失败');
 		}
 	}
+
+	public function getList() {
+		$comments = Comment::all();
+		return view('list')->with('comments', $comments);
+	}
 }
