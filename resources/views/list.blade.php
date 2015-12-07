@@ -28,7 +28,7 @@
 						{!! method_field('put') !!}
 						{!! csrf_field() !!}
 						@if ($comment->is_published)
-							<button type="submit" class="btn btn-warning">取消发布</button>
+							<button type="submit" class="btn btn-danger">取消发布</button>
 						@else
 							<button type="submit" class="btn btn-primary">发布留言</button>
 						@endif
